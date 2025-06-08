@@ -1,13 +1,11 @@
-import { Suspense, use } from "react";
-import { apiUrl } from "./config";
+import { Suspense, use } from 'react';
+import { api } from './lib/api-client';
 
-const data = fetch(apiUrl)
-  .then((res) => res.text())
-  .catch((err) => err.message);
+const data = api.$get().then((rs) => rs.text());
 
 export default function App() {
   return (
-    <Suspense fallback="loading ...">
+    <Suspense fallback='loading ...'>
       <Text />
     </Suspense>
   );
@@ -15,5 +13,5 @@ export default function App() {
 
 function Text() {
   const text = use(data);
-  return <div>{text}</div>;
+  return <h1>{text}</h1>;
 }

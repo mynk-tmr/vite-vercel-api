@@ -1,4 +1,24 @@
 export function getRandomGreet() {
-  const messages = ["Hello", "Hi", "Hey", "Hi there", "Hey there"];
-  return "Bun says " + messages[Math.floor(Math.random() * messages.length)];
+  const messages = [
+    'Namaste',
+    'Hello',
+    'Hola',
+    'Bonjour',
+    'Ciao',
+    'Merhaba',
+    'Olá',
+    'Hallo',
+    'Hej',
+    'Guten Tag',
+    'Bonjour',
+    'Ciao',
+    'Merhaba',
+    'Olá',
+    'Hallo',
+    'Hej',
+    'Guten Tag',
+    'Bonjour',
+    'Ciao',
+  ];
+  return 'Bun says ' + messages[Math.floor(Math.random() * messages.length)];
 }
