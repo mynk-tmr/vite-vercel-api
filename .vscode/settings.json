@@ -1,0 +1,7 @@
+{
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+    "hono/jsx.*",
+    "^node:",
+    "^bun"
+  ]
+}
