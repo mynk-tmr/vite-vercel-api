@@ -1,0 +1,10 @@
+html {
+  color-scheme: dark;
+  font-family: system-ui;
+  background-color: light-dark(snow, #2d2d2d);
+
+  h1 {
+    text-align: center;
+    font-variant-caps: small-caps;
+  }
+}
