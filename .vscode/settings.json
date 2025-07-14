@@ -3,5 +3,6 @@
     "hono/jsx.*",
     "^node:",
     "^bun"
-  ]
+  ],
+  "codium.codeCompletion.enable": true
 }

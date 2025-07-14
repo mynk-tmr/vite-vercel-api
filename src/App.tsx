@@ -1,7 +1,5 @@
 import { Suspense, use } from 'react';
-import { api } from './lib/api-client';
-
-const data = api.health.$get().then((rs) => rs.text());
+import { data } from './lib/api-client';
 
 export default function App() {
   return (

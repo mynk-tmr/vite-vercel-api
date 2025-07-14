@@ -2,32 +2,36 @@
   "name": "vite-vercel-api",
   "private": true,
   "type": "module",
+  "imports": {
+    "#server/*": "./server/*",
+    "#shared/*": "./shared/*",
+    "#view/*": "./src/*"
+  },
   "scripts": {
-    "dev:s": "bun --watch server/index.ts",
+    "dev:s": "DEV=true bun --watch server/index.ts",
     "dev:c": "vite --port 4000",
-    "dev": "bunx --bun concurrently --kill-others \"bun dev:s\" \"bun dev:c\"",
+    "dev": "bun -p 'Promise.all([Bun.$`bun dev:s`, Bun.$`bun dev:c`])'",
     "prebuild": "tsc -b && bun build server/index.ts --outdir ./_api --target node --minify",
     "clean": "rm -r _api && rm -r dist",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "tsc -b && bunx biome check --write src server",
-    "lint:fix": "tsc -b && biome check --fix --unsafe src server"
+    "lint": "tsc -b && bunx biome check --write .",
+    "lint:fix": "tsc -b && biome check --fix --unsafe ."
   },
   "dependencies": {
-    "@hono/node-server": "^1.15.0",
-    "hono": "^4.8.4",
+    "@hono/node-server": "^1.16.0",
+    "hono": "^4.8.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.6",
-    "@types/node": "^22.16.0",
+    "@biomejs/biome": "^2.1.1",
+    "@types/node": "^22.16.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react-swc": "^3.10.2",
-    "concurrently": "^9.2.0",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
+    "vite": "^7.0.4",
     "vite-plugin-vercel": "^9.0.7"
   }
 }
