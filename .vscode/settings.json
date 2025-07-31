@@ -4,5 +4,7 @@
     "^node:",
     "^bun"
   ],
-  "codium.codeCompletion.enable": true
+  "material-icon-theme.folders.associations": {
+    "server": "next"
+  }
 }
