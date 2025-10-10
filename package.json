@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "bun build server/index.ts --outdir=api --target=node --minify",
     "build": "rsbuild build",
     "check": "biome check --write",
     "dev:c": "rsbuild dev --open",

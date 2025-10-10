@@ -9,10 +9,5 @@
       "source": "/((?!api/.*).*)"
     }
   ],
-  "functions": {
-    "api/index.js": {
-      "excludeFiles": "dummy.txt"
-    }
-  },
   "$schema": "https://openapi.vercel.sh/vercel.json"
 }
