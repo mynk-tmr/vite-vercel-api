@@ -9,7 +9,8 @@
     "dev:c": "rsbuild dev --open",
     "format": "biome format --write",
     "preview": "rsbuild preview",
-    "dev:s": "bun run --hot server/index.ts"
+    "dev:s": "bun run --hot server/index.ts",
+    "typecheck": "tsc -b --noEmit && rm -r *.tsbuildinfo"
   },
   "dependencies": {
     "react": "^19.2.0",

@@ -3,7 +3,8 @@
   "assist": {
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": "on",
+        "useSortedProperties": "on"
       }
     }
   },
@@ -17,7 +18,10 @@
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "single"
+      "quoteStyle": "single",
+      "expand": "never",
+      "jsxQuoteStyle": "single",
+      "semicolons": "asNeeded"
     }
   },
   "css": {
@@ -28,7 +32,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      }
     }
   }
 }
