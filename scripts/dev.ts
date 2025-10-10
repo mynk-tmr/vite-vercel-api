@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process'
 
-const [client, server] = [
+const [server, client] = [
   spawn('bun', ['run', 'dev:s'], { stdio: 'inherit' }),
   spawn('bun', ['run', 'dev:c'], { stdio: 'inherit' }),
 ]
