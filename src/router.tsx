@@ -1,6 +1,7 @@
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router'
 import { NotFound } from './components/404'
-import routeLog from './middlewares/routelog'
+import { Home } from './components/Home'
+import { routeLog, sendtoHome } from './middlewares/roots'
 
 export const MainRouter: React.FC = () => {
   return <RouterProvider router={routes} />
@@ -9,22 +10,10 @@ export const MainRouter: React.FC = () => {
 const routes = createBrowserRouter([
   {
     path: '/',
-    middleware: [routeLog],
+    middleware: [routeLog, sendtoHome],
+    element: <Outlet />,
     children: [
-      {
-        path: '/home',
-        element: (
-          <div>
-            <h1>Home</h1>
-            <article>
-              Open <code>console</code>, Edit <code>src/router.tsx</code>.
-              <br />
-              <br />
-              Built with <mark>dev.css</mark> and <mark>rsbuild</mark>.
-            </article>
-          </div>
-        ),
-      },
+      { path: '/home', Component: Home },
       { path: '*', Component: NotFound },
     ],
   },
