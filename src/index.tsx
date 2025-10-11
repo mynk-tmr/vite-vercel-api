@@ -5,14 +5,14 @@ import { MainRouter } from './router'
 
 const rootEl = document.getElementById('root')
 if (rootEl) {
-  const root = createRoot(rootEl)
-  root.render(
-    <StrictMode>
-      <App>
-        <MainRouter />
-      </App>
-    </StrictMode>,
-  )
+	const root = createRoot(rootEl)
+	root.render(
+		<StrictMode>
+			<App>
+				<MainRouter />
+			</App>
+		</StrictMode>,
+	)
 } else {
-  alert('Root element not found')
+	alert('Root element not found')
 }

@@ -1,13 +1,13 @@
 {
-  "rewrites": [
-    {
-      "destination": "/api",
-      "source": "/api/(.*)"
-    },
-    {
-      "destination": "/index.html",
-      "source": "/((?!api/.*).*)"
-    }
-  ],
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+	"rewrites": [
+		{
+			"destination": "/api",
+			"source": "/api/(.*)"
+		},
+		{
+			"destination": "/index.html",
+			"source": "/((?!api/.*).*)"
+		}
+	],
+	"$schema": "https://openapi.vercel.sh/vercel.json"
 }

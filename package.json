@@ -1,32 +1,33 @@
 {
-  "name": "client",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "rsbuild build",
-    "check": "biome check --write",
-    "dev:c": "rsbuild dev --open",
-    "format": "biome format --write",
-    "preview": "rsbuild preview",
-    "dev:s": "bun run --hot api/index.ts",
-    "typecheck": "tsc -b --noEmit && rm -r *.tsbuildinfo"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.90.2",
-    "@tanstack/react-query-devtools": "^5.90.2",
-    "hono": "^4.9.10",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router": "^7.9.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.3",
-    "@rsbuild/core": "^1.5.14",
-    "@rsbuild/plugin-react": "^1.4.1",
-    "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
-    "typescript": "^5.9.3"
-  }
+	"name": "client",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rsbuild build",
+		"check": "biome check --write",
+		"dev:c": "rsbuild dev --open",
+		"format": "biome format --write",
+		"preview": "rsbuild preview",
+		"dev:s": "bun run --hot server/index.ts",
+		"typecheck": "tsc -b --noEmit",
+		"makeapi": "bun build server/index.ts --outdir api --minify --target node"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.90.2",
+		"@tanstack/react-query-devtools": "^5.90.2",
+		"hono": "^4.9.10",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"react-router": "^7.9.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.3",
+		"@rsbuild/core": "^1.5.14",
+		"@rsbuild/plugin-react": "^1.4.1",
+		"@types/node": "^24.7.1",
+		"@types/react": "^19.2.2",
+		"@types/react-dom": "^19.2.1",
+		"typescript": "^5.9.3"
+	}
 }
